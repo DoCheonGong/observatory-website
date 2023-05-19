@@ -1,0 +1,392 @@
+@charset "UTF-8";
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+ul,
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* popup */
+.popup {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 500px;
+    min-height: 200px;
+    background-color: #f8f8f8;
+    border: 2px solid #000;
+    border-radius: 5px;
+    padding: 20px;
+    z-index: 10;
+    /* box-shadow: ; */
+}
+
+.popup h1 {
+    font: bold 27px/1 "돋움";
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.popup p {
+    font: normal 18px/1.5 "Arial", "돋움";
+}
+
+.popup button {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    border: none;
+    outline: none;
+    background-color: #333;
+    padding: 5px 10px;
+    color: #eee;
+    cursor: pointer;
+}
+
+/* header */
+header {
+    width: 100%;
+}
+
+header .inner {
+    width: 1200px;
+    height: 100px;
+    margin: 0 auto;
+    position: relative;
+}
+
+header .inner h1 {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+#gnb {
+    position: absolute;
+    top: 30px;
+    right: 50px;
+    z-index: 10;
+}
+
+#gnb>li {
+    float: left;
+    position: relative;
+}
+
+#gnb>li>a {
+    display: block;
+    width: 150px;
+    height: 40px;
+    font: bold 14px/40px "돋움";
+    color: #fff;
+    background-color: #0066adc0;
+    text-align: center;
+}
+
+#gnb>li>a:hover {
+    background-color: #0066ad;
+}
+
+#gnb>li>a.on {
+    background-color: #0066ad;
+}
+
+.sub {
+    display: none;
+}
+
+.sub>li>a {
+    display: block;
+    width: 150px;
+    /* #gnb와 같은 width를 가지도록 한다 */
+    height: 30px;
+    font: bold 12px/30px "돋움";
+    color: #fff;
+    background-color: #0066ad;
+    text-align: center;
+}
+
+.sub>li>a:hover {
+    background-color: #fff;
+    color: #0066ad;
+}
+
+/* slider */
+#slide {
+    width: 1200px;
+    height: 300px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+#slide .frame {
+    height: 900px;
+    position: relative;
+}
+
+#slide .frame li {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/* content box */
+#contentBox {
+    width: 100%
+}
+
+#contentBox .inner {
+    width: 1200px;
+    height: 200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.board {
+    flex: 1.5;
+    height: 200px;
+    overflow: hidden;
+}
+
+.board .tab {
+    display: flex;
+    width: 100%;
+    height: 50px;
+}
+
+.board .tab li {
+    width: 100px;
+    background-color: #0066ad55;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.board .tab li a {
+    font: bold 15px/1 "Arial";
+    color: #0005;
+}
+
+/*
+.board .tab li a {
+    display: block;
+    padding: 10px;
+    font-size: 14px;
+    color: #f8f8f8;
+    font-weight: bold;
+    border: 1px solid #333;
+}
+.board .tab li:nth-of-type(1) a {
+    border-right: none;
+}
+*/
+.board .tab li.on {
+    background-color: #0066ad;
+}
+
+.board .tab li.on a {
+    color: #fff;
+}
+
+.content {
+    width: 100%;
+    height: 150px;
+    position: relative;
+    /* calc로 정확한 높이 지정 */
+}
+
+.content div {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    opacity: 0;
+    z-index: 1;
+}
+
+.content div.on {
+    opacity: 1;
+    z-index: 2;
+}
+
+#notice {
+    justify-content: flex-start;
+}
+
+#notice ul {
+    width: 100%;
+}
+
+#notice ul li {
+    display: flex;
+    justify-content: space-between;
+    height: 30px;
+}
+
+#notice ul li:nth-of-type(odd) {
+    background-color: #0066ad22;
+}
+
+#notice ul li:hover {
+    background-color: #0066ad44;
+}
+
+#notice ul li a {
+    font: 13px/30px "맑은 고딕";
+    color: #333;
+    margin-left: 30px;
+    cursor: pointer;
+}
+
+#notice ul li span {
+    font: 10px/30px "Arial";
+    color: #333;
+    margin-right: 30px;
+}
+
+#gallery>a:nth-of-type(1) {
+    width: 150px;
+    height: 100px;
+    background-image: url(./images/gallery1.jpg);
+    background-repeat: no-repeat;
+    background-position: left;
+    background-size: 120px;
+}
+
+#gallery>a:nth-of-type(2) {
+    width: 135px;
+    height: 90px;
+    background-image: url(./images/gallery2.jpg);
+    background-repeat: no-repeat;
+    background-position: left;
+    background-size: 120px;
+}
+
+#gallery>a:nth-of-type(3) {
+    width: 135px;
+    height: 90px;
+    background-image: url(./images/gallery3.jpg);
+    background-repeat: no-repeat;
+    background-position: left;
+    background-size: 120px;
+}
+
+/* banner */
+.banner {
+    flex: 1;
+    display: flex;
+    margin-left: 80px;
+    width: 240px;
+    height: 180px;
+    background-image: url(./images/banner.jpg);
+    background-repeat: no-repeat;
+    background-position: left;
+    background-size: 240px;
+}
+
+.banner p {}
+
+/* shortcut */
+.shortcut {
+    flex: 1;
+    display: flex;
+    width: 300px;
+    height: 180px;
+    background-image: url(./images/shortcut.jpg);
+    background-repeat: no-repeat;
+    background-position: left;
+    background-size: 300px;
+}
+
+.shortcut a span {
+    font-size: 12px;
+    text-align: center;
+}
+
+/* footer */
+footer {
+    width: 100%;
+}
+
+footer .inner {
+    width: 1200px;
+    display: flex;
+    margin: 0 auto;
+}
+
+.footer-logo {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-logo a {
+    color: #000;
+}
+
+.footer-wrap {
+    flex: 5;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-menu {
+    width: 100%;
+    height: 50px;
+}
+
+.footer-menu ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-menu ul li {
+    margin-left: 30px;
+}
+
+.footer-menu ul li a {
+    font: bold 20px/50px "돋움";
+    color: #000;
+    padding: 10px;
+}
+
+.footer-menu ul li a:hover {
+    background: #0066ad33;
+}
+
+.copyright {
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.copyright span {
+    font: 12px/50px "Arial";
+    color: #333;
+}
