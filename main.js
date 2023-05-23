@@ -45,7 +45,7 @@ $(document).ready(function () {
     }, 3000);
 
     /* popup */
-    $("#notice ul li a").on("click", function () {
+    $("#notice ul li").eq(0).on("click", function () {
         $(".popup").show();
         //$(".popup").css("display", "block");
     })
